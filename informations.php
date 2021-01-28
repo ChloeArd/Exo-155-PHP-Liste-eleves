@@ -10,11 +10,29 @@ $tableau = [ 0 => ["Ardoise","Chloé","18","Anor", "passions"=> ["Jeux vidéos",
              7 => ["Brotonne","Lou","18","Féron", "passions"=> ["Jeux vidéos","animaux","manga"]]
 ];
 
+
+if (!isset($_GET["index"])) {
+    header('Location: index.php?error=1');
+}
+
+
 echo "<a href='index.php'> Précédent </a>";
 
 $index = intval($_GET['index']);
 
-foreach ($tableau as $index => $eleves){
-    echo "<p> $eleves[2]</p>
-          <p> $eleves[3]</p>";
+if ($index < 0){
+    $index = 0;
 }
+
+foreach ($tableau[$index] as $index => $eleves){
+    if ($index === "passions"){
+        foreach ($eleves as $passions){
+            echo "Passions : ";
+            echo "$passions ";
+        }
+    }
+    else{
+        echo "<p>$eleves</p>";
+    }
+}
+
