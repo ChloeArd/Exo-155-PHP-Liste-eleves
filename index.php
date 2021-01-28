@@ -9,8 +9,26 @@
               7 => ["Brotonne","Lou","18","Féron", "passions"=> ["Jeux vidéos","animaux","manga"]]
  ];
 
+echo "<h1>Liste des élèves :</h1><br>";
 
 foreach ($tableau as $index => $eleves){
-    echo "<a href='informations.php?index=$index'>$eleves[0] $eleves[1]</a><br>";
+    echo "<a class='listes' href='informations.php?index=$index'>$eleves[0] $eleves[1]</a><br>";
 }
+
+?>
+<!doctype html>
+<html lang=fr>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Liste des élèves</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+</body>
+</html>
 
